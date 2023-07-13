@@ -1,15 +1,17 @@
-package com.hei.project2p1.modele;
+package com.example.demo.model;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-@Entity
-@Data
-@NoArgsConstructor
+import lombok.*;
+
+import java.time.LocalDate;
+
 @AllArgsConstructor
-
-
+@NoArgsConstructor
+@Getter
+@Setter
+@ToString
+@EqualsAndHashCode
+@Entity
 @Table(name = "employee")
 public class Employee {
     @Id
@@ -18,13 +20,7 @@ public class Employee {
 
     private String firstName;
     private String lastName;
-
-    @Column(unique = true)
-    private String employeeId;
-
+    private LocalDate dateOfBirth;
     @Lob
-    @Basic(fetch = FetchType.LAZY)
-    private byte[] image;
-
-    // Getters and setters
+    private String image;
 }

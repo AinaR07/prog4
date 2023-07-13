@@ -1,22 +1,19 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Liste des employés</title>
+    <title>Gestion d'employés</title>
+    <link rel="stylesheet" type="text/css" href="/css/styles.css">
 </head>
 <body>
-<h1>Liste des employés</h1>
-<table>
-    <tr>
-        <th>Nom</th>
-        <th>Prénoms</th>
-        <th>Date de naissance</th>
-    </tr>
-    <tr th:each="employee : ${employees}">
-        <td th:text="${employee.nom}"></td>
-        <td th:text="${employee.prenoms}"></td>
-        <td th:text="${employee.dateNaissance}"></td>
-    </tr>
-</table>
+<div class="container">
+    <div class="card">
+        <h1 class="title">Gestion d'employés</h1>
+        <div class="options">
+            <a class="links" href="/add-employee">Ajouter employés</a>
+            <a class="links" href="/employees">Liste d'employés</a>
+        </div>
+    </div>
+</div>
+
 </body>
 </html>

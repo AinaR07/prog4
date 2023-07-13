@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Liste des employés</title>
+  <link rel="stylesheet" type="text/css" href="/css/styles.css">
+</head>
+<body>
+<nav class="navbar">
+  <ul class="nav-list">
+    <li class="nav-item">
+      <a class="nav-link" href="/">Accueil</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/employees">Employés</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/add-employee">Ajouter</a>
+    </li>
+  </ul>
+</nav>
+
+<h1>Liste des employés</h1>
+<table>
+  <thead>
+  <tr>
+    <th>Prénom</th>
+    <th>Nom</th>
+    <th>Date de naissance</th>
+  </tr>
+  </thead>
+  <tbody>
+  <!-- Boucle sur la liste des employés -->
+  <tr th:each="employee : ${employees}">
+    <td><a th:href="@{/fiche/{id}(id=${employee.id})}" th:text="${employee.firstName}"></a></td>
+    <td th:text="${employee.lastName}"></td>
+    <td th:text="${employee.dateOfBirth}"></td>
+  </tr>
+  </tbody>
+</table>
+</body>
+</html>

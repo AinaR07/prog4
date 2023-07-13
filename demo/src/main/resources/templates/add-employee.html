@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Ajouter un employé</title>
+    <link rel="stylesheet" type="text/css" href="/css/styles.css">
+</head>
+<body>
+<nav class="navbar">
+    <ul class="nav-list">
+        <li class="nav-item">
+            <a class="nav-link" href="/">Accueil</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/employees">Employés</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/add-employee">Ajouter</a>
+        </li>
+    </ul>
+</nav>
+
+<h1>Ajouter un employé</h1>
+<form action="/add-employee" method="post" enctype="multipart/form-data">
+    <div>
+        <label for="firstName">Prénom:</label>
+        <input type="text" id="firstName" name="firstName" required>
+    </div>
+    <div>
+        <label for="lastName">Nom:</label>
+        <input type="text" id="lastName" name="lastName" required>
+    </div>
+    <div>
+        <label for="dateOfBirth">Date de naissance:</label>
+        <input type="date" id="dateOfBirth" name="dateOfBirth" required>
+    </div>
+    <div>
+        <label for="imageFile">Image:</label>
+        <input type="file" id="imageFile" name="imageFile">
+    </div>
+    <div>
+        <button type="submit">Ajouter</button>
+    </div>
+</form>
+</body>
+</html>
