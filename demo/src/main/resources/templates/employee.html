@@ -31,7 +31,7 @@
   </thead>
   <tbody>
   <!-- Boucle sur la liste des employés -->
-  <tr th:each="employee : ${employees}">
+  <tr th:each="employee : ${employee}">
     <td><a th:href="@{/fiche/{id}(id=${employee.id})}" th:text="${employee.firstName}"></a></td>
     <td th:text="${employee.lastName}"></td>
     <td th:text="${employee.dateOfBirth}"></td>

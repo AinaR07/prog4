@@ -24,11 +24,11 @@ import java.util.Optional;
 public class EmployeeController {
     private final EmployeeService employeeService;
 
-    @GetMapping("/employees")
+    @GetMapping("/employee")
     public String getEmployees(Model model) {
         List<Employee> employees = employeeService.getAllEmployees();
-        model.addAttribute("employees", employees);
-        return "employees";
+        model.addAttribute("employee", employees);
+        return "employee";
     }
 
 
@@ -56,7 +56,7 @@ public class EmployeeController {
         }
 
         employeeService.addEmployee(employeeModel);
-        return "redirect:/employees";
+        return "redirect:/employee";
     }
 
 }
